@@ -6,6 +6,7 @@ import com.keixxdd.fitnesskittest.domain.model.training.Training
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
+import java.net.UnknownHostException
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(
@@ -26,7 +27,10 @@ class RepositoryImpl @Inject constructor(
             wrapResult(response)
         }catch (e : HttpException){
             ResponseWrapper.Failure(e.localizedMessage)
-        }catch (e: IOException){
+        }catch (e: UnknownHostException){
+            ResponseWrapper.Failure(e.localizedMessage)
+        }catch (e: IOException) {
             ResponseWrapper.Failure("An unexpected error occurred.")
         }
+
 }

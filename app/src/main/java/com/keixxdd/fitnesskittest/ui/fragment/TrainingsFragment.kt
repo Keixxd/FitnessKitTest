@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.keixxdd.fitnesskittest.R
 import com.keixxdd.fitnesskittest.databinding.FragmentTrainingsBinding
 import com.keixxdd.fitnesskittest.domain.model.training.Lesson
 import com.keixxdd.fitnesskittest.domain.model.training.Training
@@ -44,7 +45,10 @@ class TrainingsFragment : Fragment() {
                     it.data != null -> {
                         showTrainingsList(it.data)
                     }
-                    it.error!!.isNotEmpty() -> Snackbar.make(binding.root, it.error, Snackbar.LENGTH_SHORT).show()
+                    it.error!!.isNotEmpty() -> Snackbar.make(binding.root, it.error, Snackbar.LENGTH_INDEFINITE)
+                        .setAction("Повтор") {
+                            fetchData()
+                        }.show()
                     it.isLoading -> {
                         showLoadingBar()
                     }
@@ -52,6 +56,10 @@ class TrainingsFragment : Fragment() {
             }
         }
 
+    }
+
+    private fun fetchData() {
+        viewModel.getTrainings()
     }
 
     private fun showLoadingBar() {
