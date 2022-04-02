@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trainings"
+        android:title="@string/trainings"
+        android:icon="@drawable/ic_baseline_calendar_today_24"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/requests"
+        android:title="@string/requests"
+        android:icon="@drawable/ic_outline_check_box_24"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/add"
+        android:title="@string/add"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/chat"
+        android:title="@string/chat"
+        android:icon="@drawable/ic_baseline_chat_bubble_outline_24"
+        android:enabled="true"
+        />
+    <item
+        android:id="@+id/more"
+        android:title="@string/more"
+        android:icon="@drawable/ic_baseline_more_horiz_24"
+        android:enabled="true"
+        />
+</menu>
